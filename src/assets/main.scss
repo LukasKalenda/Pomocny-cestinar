@@ -1,3 +1,9 @@
+//Import SCSS files
+@forward "reset.scss";
+@forward "fontsVariables.scss";
+@forward "common.scss";
+//Tailwind CSS
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
