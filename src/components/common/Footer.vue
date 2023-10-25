@@ -155,8 +155,8 @@
           <span> © Copyright {{ date }} - Všechna práva vyhrazena </span>
           <span
             >Vytvořeno
-            <NuxtLink class="text-gray-600 hover:underline" to="/nas-tym"
-              >L&M</NuxtLink
+            <RouterLink class="text-gray-600 hover:underline" to="/nas-tym"
+              >L&M</RouterLink
             ></span
           >
         </div>
@@ -165,7 +165,10 @@
   </footer>
 </template>
 
-<script setup></script>
+<script setup>
+import { RouterLink } from 'vue-router'
+const date = new Date().getFullYear()
+</script>
 
 <style scoped>
 .router-link-active {
