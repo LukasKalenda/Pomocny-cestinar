@@ -103,7 +103,7 @@
               <!-- <DarkModeSwitcher -->
               <div class="flex">
                 <img
-                  class="moon cursor-pointer w-6 h-6 overflow-hidden border-1 border-gray-400 rounded-full"
+                  class="dark:hidden moon cursor-pointer w-6 h-6 overflow-hidden border-1 border-gray-400 rounded-full"
                   src="@/assets/img/moon.svg"
                   alt="Moon Icon"
                 />
@@ -149,6 +149,31 @@ import { ref, onMounted } from "vue";
 import { RouterLink } from "vue-router";
 
 import DropdownProfile from "./DropdownProfile.vue";
+
+//themeMode
+// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+if (
+  localStorage.theme === "dark" ||
+  (!("theme" in localStorage) &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+  document.documentElement.classList.add("dark");
+} else {
+  document.documentElement.classList.remove("dark");
+}
+
+onMounted(() => {
+  const moon = document.querySelector(".moon");
+  const sun = document.querySelector(".sun");
+  moon.addEventListener("click", () => {
+    document.documentElement.classList.add("dark");
+    localStorage.theme = "dark";
+  });
+  sun.addEventListener("click", () => {
+    document.documentElement.classList.remove("dark");
+    localStorage.theme = "light";
+  });
+})
 
 const isOpen = ref(false);
 const toggle = () => {
