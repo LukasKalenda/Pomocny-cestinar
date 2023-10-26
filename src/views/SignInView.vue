@@ -57,7 +57,7 @@
 
           <span class="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
         </div>
-
+        <p v-if="errMsg"> {{ errMsg }}</p>
         <div class="mt-4">
           <label
             class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
@@ -95,6 +95,7 @@
         <div class="mt-6">
           <button
             class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+            @click="register"
           >
             Sign In
           </button>
@@ -116,6 +117,44 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import router from "../router";
+
+const errMsg = ref("");
+const email = ref("");
+const password = ref("");
+
+const register = () => {
+  signInWithEmailAndPassword(getAuth(), email.value, password.value)
+    .then((userCredential) => {
+        console.log("Succesfully signed in!");
+        router.push("/");
+    })
+    .catch((error) => {
+        console.log("Error signing in!", error);
+        alert(error);
+        switch(error.code) {
+            case "auth/invalid-email":
+                errMsg.value = "Invalid email address!";
+                break;
+            case "auth/user-disabled":
+                errMsg.value = "User is disabled!";
+                break;
+            case "auth/user-not-found":
+                errMsg.value = "User not found!";
+                break;
+            case "auth/wrong-password":
+                errMsg.value = "Wrong password!";
+                break;
+            default:
+                errMsg.value = "Unknown error!";
+        }
+    });
+};
+const signWithGoogle = () => {};
+</script>
 
 <style scoped></style>
