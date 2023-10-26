@@ -66,12 +66,18 @@ const getCurrentUser = () => {
 router.beforeEach(async (to, from, next) => {
   if (to.matched.some((record) => record.meta.requiresAuth)) {
     // Check if user is logged in
-    if (await getCurrentUser()) {
+    const user = await getCurrentUser();
+    if (user) {
+      // Uživatel je přihlášen, pokračujeme
       next();
     } else {
+      // Uživatel není přihlášen, přesměrujeme na stránku přihlášení
       alert("You must be logged in to see this page.");
       next({ name: "signin" });
     }
+  } else {
+    // Tato cesta nevyžaduje autentizaci, takže pokračujeme
+    next();
   }
 });
 

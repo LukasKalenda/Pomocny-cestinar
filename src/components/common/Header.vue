@@ -82,11 +82,7 @@
                 class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >Kurzy</RouterLink
               >
-              <RouterLink
-                to="/clanky"
-                class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                >Články</RouterLink
-              >
+              <Dropdown />
               <RouterLink
                 to="/nas-tym"
                 class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -168,17 +164,24 @@
 </template>
 
 <script setup>
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import router from "../../router";
+
 import { ref, onMounted } from "vue";
 import { RouterLink } from "vue-router";
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+
+import Dropdown from "./Dropdown.vue";
+
 const isOpen = ref(false);
 const toggle = () => {
   isOpen.value = !isOpen.value;
 };
 
 const isLogged = ref(false);
+let auth;
 onMounted(() => {
-  onAuthStateChanged(getAuth(), (user) => {
+  auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
     if (user) {
       isLogged.value = true;
     } else {
@@ -187,9 +190,9 @@ onMounted(() => {
   });
 });
 const handleSignOut = () => {
-    signOut(auth).then(() => {
-      router.push("/");
-    });
+  signOut(auth).then(() => {
+    router.push("/");
+  });
 };
 </script>
 

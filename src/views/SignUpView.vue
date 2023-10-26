@@ -210,9 +210,14 @@
 </template>
 
 <script setup>
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import router from "../router";
 
 const email = ref("");
@@ -231,7 +236,20 @@ const register = () => {
       alert(errorMessage);
     });
 };
-const signWithGoogle = () => {};
+const signWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(getAuth(), provider)
+    .then((result) => {
+        // const credential = GoogleAuthProvider.credentialFromResult(result);
+        // const token = credential.accessToken;
+        // const user = result.user;
+        console.log(user);
+        router.push("/");
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+};
 </script>
 
 <style scoped></style>
