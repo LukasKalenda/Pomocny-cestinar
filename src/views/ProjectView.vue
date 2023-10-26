@@ -82,7 +82,7 @@
               type="button"
               class="h-10 px-4 py-2 m-1 text-white transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400"
             >
-              <NuxtLink to="/kontakt">Napište nám</NuxtLink>
+              <RouterLink :to="{ name: 'contact' }">Napište nám</RouterLink>
             </button>
           </div>
         </div>
@@ -117,7 +117,7 @@
           class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-2"
         >
           <div v-for="m in team" :key="m.name"
-            class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 border-gray-100 dark:border-gray-700 dark:hover:border-transparent"
+            class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent"
           >
             <div class="flex flex-col sm:-mx-4 sm:flex-row">
               <img
@@ -207,25 +207,27 @@
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router';
+
 const team = [{
   name: 'Lukáš Kalenda',
   role: 'Zakladatel projektu',
   description: 'Na tomto projeku se zaměruji převážně na kordinacii obsahu a navázání kontaktů s naší skvělou komunitou.',
-  image: '/src/assets/img/team/undraw_male_avatar.svg',
+  image: '../src/assets/img/team/undraw_male_avatar.svg',
   git: "#"
 },
 {
   name: "Michal Stonjek",
   role: "Vývojář",
   description: "Zabývám se vývojem a správou hlavně backend části našich stránek.",
-  image: '/src/assets/img/team/undraw_male_avatar.svg',
+  image: '../src/assets/img/team/undraw_male_avatar.svg',
   git: "#"
 },
 {
   name: "Adéla Krupková",
   role : "Tvůrce obsahu",
   description: "K projektu přispívám různým druhem článků. Vedu a kontroluji obsah na stránkách.",
-  image: '/src/assets/img/team/undraw_female_avatar_efig.svg',
+  image: '../src/assets/img/team/undraw_female_avatar_efig.svg',
   git: "#"
 }
 ]

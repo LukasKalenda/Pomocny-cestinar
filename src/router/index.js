@@ -16,12 +16,12 @@ const router = createRouter({
       component: () => import("../views/AboutView.vue"),
     },
     {
-      path: "/articles",
-      name: "articles",
-      component: () => import("../views/ArticlesView.vue"),
+      path: "/kontakt",
+      name: "contact",
+      component: () => import("../views/ContactView.vue"),
     },
     {
-      path: "/kontakt",
+      path: "/articles",
       name: "articles",
       component: () => import("../views/ArticlesView.vue"),
     },
@@ -45,6 +45,11 @@ const router = createRouter({
       name: "profile",
       component: () => import("../views/ProfileView.vue"),
       meta: { requiresAuth: true },
+    },
+    {
+      path: "/projekt",
+      name: "project",
+      component: () => import("../views/ProjectView.vue"),
     },
     // 404
     {

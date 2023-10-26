@@ -1,27 +1,90 @@
 <template>
-  <div>
+  <section class="bg-white dark:bg-gray-900">
     <div
       class="container flex items-center justify-center min-h-screen px-6 mx-auto"
     >
-      <div class="w-full max-w-md">
-        <div class="flex justify-center mx-auto">
-          <img
-            class="w-auto h-7 sm:h-8"
-            src="https://merakiui.com/images/logo.svg"
-            alt=""
+      <form class="w-full max-w-md">
+        <img
+          class="w-auto h-7 sm:h-8"
+          src="../assets/img/main_logo.png"
+          alt=""
+        />
+
+        <h1
+          class="mt-3 text-2xl font-semibold text-gray-800 capitalize sm:text-3xl dark:text-white"
+        >
+          Přihlaš se!
+        </h1>
+        <p v-if="errMsg">{{ errMsg }}</p>
+        <div class="relative flex items-center mt-8">
+          <span class="absolute">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+          </span>
+
+          <input
+            type="email"
+            class="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+            placeholder="Email address"
+            v-model="email"
           />
         </div>
 
-        <p class="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
-          Welcome back!
-        </p>
+        <div class="relative flex items-center mt-4">
+          <span class="absolute">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+              />
+            </svg>
+          </span>
 
-        <a
-          href="#"
-          class="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-        >
-          <div class="px-4 py-2">
-            <svg class="w-6 h-6" viewBox="0 0 40 40">
+          <input
+            type="password"
+            class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+            placeholder="Heslo"
+            v-model="password"
+          />
+        </div>
+
+        <div class="mt-6">
+          <button
+            class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+            @click="register"
+            >
+            Sign in
+          </button>
+
+          <p class="mt-4 text-center text-gray-600 dark:text-gray-400">
+            nebo pomocí
+          </p>
+
+          <a
+            href="#"
+            class="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+          >
+            <svg class="w-6 h-6 mx-2" viewBox="0 0 40 40">
               <path
                 d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z"
                 fill="#FFC107"
@@ -39,87 +102,27 @@
                 fill="#1976D2"
               />
             </svg>
-          </div>
 
-          <span class="w-5/6 px-4 py-3 font-bold text-center"
-            >Sign in with Google</span
-          >
-        </a>
+            <span class="mx-2">Přihlašení Google</span>
+          </a>
 
-        <div class="flex items-center justify-between mt-4">
-          <span class="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
-
-          <a
-            href="#"
-            class="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline"
-            >or login with email</a
-          >
-
-          <span class="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
-        </div>
-        <p v-if="errMsg"> {{ errMsg }}</p>
-        <div class="mt-4">
-          <label
-            class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-            for="LoggingEmailAddress"
-            >Email Address</label
-          >
-          <input
-            id="LoggingEmailAddress"
-            class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-            type="email"
-          />
-        </div>
-
-        <div class="mt-4">
-          <div class="flex justify-between">
-            <label
-              class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
-              for="loggingPassword"
-              >Password</label
+          <div class="mt-6 text-center">
+            <RouterLink
+              :to="{ name: 'signup' }"
+              class="text-sm text-blue-500 hover:underline dark:text-blue-400"
             >
-            <a
-              href="#"
-              class="text-xs text-gray-500 dark:text-gray-300 hover:underline"
-              >Forget Password?</a
-            >
+              Nemáš ještě účet? Registruj se!
+            </RouterLink>
           </div>
-
-          <input
-            id="loggingPassword"
-            class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
-            type="password"
-          />
         </div>
-
-        <div class="mt-6">
-          <button
-            class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
-            @click="register"
-          >
-            Sign In
-          </button>
-        </div>
-
-        <div class="flex items-center justify-between mt-4">
-          <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-
-          <a
-            href="#"
-            class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
-            >or sign up</a
-          >
-
-          <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-        </div>
-      </div>
+      </form>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import router from "../router";
 
@@ -130,28 +133,28 @@ const password = ref("");
 const register = () => {
   signInWithEmailAndPassword(getAuth(), email.value, password.value)
     .then((userCredential) => {
-        console.log("Succesfully signed in!");
-        router.push("/");
+      console.log("Succesfully signed in!");
+      router.push("/");
     })
     .catch((error) => {
-        console.log("Error signing in!", error);
-        alert(error);
-        switch(error.code) {
-            case "auth/invalid-email":
-                errMsg.value = "Invalid email address!";
-                break;
-            case "auth/user-disabled":
-                errMsg.value = "User is disabled!";
-                break;
-            case "auth/user-not-found":
-                errMsg.value = "User not found!";
-                break;
-            case "auth/wrong-password":
-                errMsg.value = "Wrong password!";
-                break;
-            default:
-                errMsg.value = "Unknown error!";
-        }
+      console.log("Error signing in!", error);
+      alert(error);
+      switch (error.code) {
+        case "auth/invalid-email":
+          errMsg.value = "Invalid email address!";
+          break;
+        case "auth/user-disabled":
+          errMsg.value = "User is disabled!";
+          break;
+        case "auth/user-not-found":
+          errMsg.value = "User not found!";
+          break;
+        case "auth/wrong-password":
+          errMsg.value = "Wrong password!";
+          break;
+        default:
+          errMsg.value = "Unknown error!";
+      }
     });
 };
 const signWithGoogle = () => {};
