@@ -5,7 +5,7 @@
       >
         <div class="wf-ull lg:w-1/2">
           <p class="text-sm font-medium text-blue-500 dark:text-blue-400">
-            {{ error.statusCode || error.status}}
+            {{ error.statusCode }}
           </p>
           <h1
             class="mt-3 text-2xl font-semibold text-gray-800 dark:text-white md:text-3xl"
@@ -49,7 +49,7 @@
         <div class="relative w-full mt-12 lg:w-1/2 lg:mt-0">
           <img
             class="w-full max-w-lg lg:mx-auto"
-            src="/img/comptrouble.svg"
+            src="../assets/img/comptrouble.svg"
             alt=""
           />
         </div>
@@ -58,7 +58,16 @@
   </template>
   
   <script setup>
-  defineProps(["error"])
+  const error = defineProps({
+    statusCode: {
+      type: Number,
+      default: 404,
+    },
+    message: {
+      type: String,
+      default: "Stránka nenalezena",
+    },
+  });
   </script>
   
   <style lang="scss" scoped></style>
