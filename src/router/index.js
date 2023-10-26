@@ -11,14 +11,9 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/about",
+      path: "/o-nas",
       name: "about",
       component: () => import("../views/AboutView.vue"),
-    },
-    {
-      path: "/faq",
-      name: "faq",
-      component: () => import("../views/FAQView.vue"),
     },
     {
       path: "/articles",
@@ -26,17 +21,27 @@ const router = createRouter({
       component: () => import("../views/ArticlesView.vue"),
     },
     {
-      path: "/sign-up",
+      path: "/kontakt",
+      name: "articles",
+      component: () => import("../views/ArticlesView.vue"),
+    },
+    {
+      path: "/faq",
+      name: "faq",
+      component: () => import("../views/FAQView.vue"),
+    },
+    {
+      path: "/prihlaseni",
       name: "signup",
       component: () => import("../views/SignUpView.vue"),
     },
     {
-      path: "/sign-in",
+      path: "/registrace",
       name: "signin",
       component: () => import("../views/SignInView.vue"),
     },
     {
-      path: "/profile",
+      path: "/profil",
       name: "profile",
       component: () => import("../views/ProfileView.vue"),
       meta: { requiresAuth: true },

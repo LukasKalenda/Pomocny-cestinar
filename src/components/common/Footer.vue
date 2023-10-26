@@ -5,7 +5,7 @@
         <div class="w-full -mx-6 lg:w-2/5">
           <div class="px-6">
             <a href="#">
-                <img class="w-auto h-7" src="@/img/main_logowhite.svg" alt="" />
+                <img class="w-auto h-7" src="@/assets/img/main_logo.png" alt="" />
             </a>
 
             <p class="max-w-sm mt-2 text-gray-500 dark:text-gray-400">
