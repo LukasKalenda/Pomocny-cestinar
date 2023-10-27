@@ -11,11 +11,6 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/kontakt",
-      name: "contact",
-      component: () => import("../views/ContactView.vue"),
-    },
-    {
       path: "/clanky",
       name: "articles",
       component: () => import("../views/ArticlesView.vue"),
@@ -24,6 +19,16 @@ const router = createRouter({
       path: "/clanky/1",
       name: "article",
       component: () => import("../views/OneArticleView.vue"),
+    },
+    {
+      path: "/kontakt",
+      name: "contact",
+      component: () => import("../views/ContactView.vue"),
+    },
+    {
+      path: "/kurzy",
+      name: "course",
+      component: () => import("../views/CourseView.vue"),
     },
     {
       path: "/faq",
