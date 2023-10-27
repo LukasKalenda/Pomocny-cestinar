@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Registration component -->
     <section class="bg-white dark:bg-gray-900">
       <div
         class="container flex items-center justify-center min-h-screen px-6 mx-auto"

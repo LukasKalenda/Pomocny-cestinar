@@ -11,11 +11,6 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/o-nas",
-      name: "about",
-      component: () => import("../views/AboutView.vue"),
-    },
-    {
       path: "/kontakt",
       name: "contact",
       component: () => import("../views/ContactView.vue"),

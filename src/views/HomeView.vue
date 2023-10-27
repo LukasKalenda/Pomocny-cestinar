@@ -1,11 +1,12 @@
 <template>
+  <!-- Landing page -->
   <main>
-    <!-- Landing page -->
     <section class="bg-c_gray shadow dark:bg-secondary scroll-smooth">
       <div class="container px-6 py-16 mx-auto">
         <div class="items-center lg:flex">
           <div class="w-full lg:w-1/2">
             <div class="lg:max-w-lg">
+              <!-- HEADLINE -->
               <h1
                 class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl"
               >
@@ -18,22 +19,25 @@
                 konfigurace až po programování.
               </p>
 
-              <button
-                class="w-full px-5 py-2 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-purple-600 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
-              >
-                <a href="#kurzy">Studovat</a>
-              </button>
-              <button
-                class="w-full px-5 py-2 mt-6 lg:ml-4 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-blue-600 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
-              >
-                Zjistit více ->
-              </button>
+              <Button
+                class="mt-3"
+                color="purple"
+                link="#kurzy"
+                text="Studovat"
+              />
+              <Button
+                class="mt-3 ml-3"
+                color="blue"
+                :link="{ name: 'project' }"
+                text="Zjistit více"
+              />
             </div>
           </div>
 
           <div
             class="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2"
           >
+            <!-- SVG MAIN ICON -->
             <img
               class="w-full h-full lg:max-w-3xl"
               src="../assets/img/undraw_world.svg"
@@ -83,11 +87,12 @@
                 neváhej se přidat, kontaky nalezneš níže.
               </p>
 
-              <button
-                class="w-full px-5 py-2 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-purple-600 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
-              >
-                <RouterLink to="/nas-tym">Náš tým</RouterLink>
-              </button>
+              <Button
+                class="mt-3"
+                color="purple"
+                :link="{ name: 'project' }"
+                text="Projekt"
+              />
             </div>
           </div>
 
@@ -104,8 +109,6 @@
       </div>
     </section>
 
-    <section></section>
-
     <!-- Novinky a články -->
     <section class="bg-c_gray shadow dark:bg-blue-950">
       <h2
@@ -115,6 +118,7 @@
       </h2>
       <div class="container px-6 py-16 mx-auto">
         <div class="items-center flex lg:flex-row flex-col flex-wrap">
+          <!-- Articles rendering -->
           <ArticleHomePage />
         </div>
       </div>
@@ -123,7 +127,7 @@
 </template>
 
 <script setup>
-import { RouterLink } from "vue-router";
 import ArticleHomePage from "@/components/common/ArticleHomePage.vue";
 import CourseHomePage from "@/components/common/CourseHomePage.vue";
+import Button from "@/components/common/Button.vue";
 </script>
