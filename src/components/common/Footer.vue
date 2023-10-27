@@ -5,11 +5,11 @@
         <div class="w-full -mx-6 lg:w-2/5">
           <div class="px-6">
             <a href="#">
-                <img class="w-auto h-7" src="@/assets/img/main_logo.png" alt="" />
+              <img class="w-auto h-7" src="@/assets/img/main_logo.png" alt="" />
             </a>
 
             <p class="max-w-sm mt-2 text-gray-500 dark:text-gray-400">
-              Připojte se ke skvělé komunitě tvořící svět nejen IT.
+              Připojte se ke skvělé komunitě, tvořící svět nejen IT.
             </p>
 
             <div class="flex mt-6 -mx-2">
@@ -73,15 +73,15 @@
           >
             <div>
               <h3 class="text-gray-700 uppercase dark:text-white">O nás</h3>
-              <a
-                href="#"
+              <RouterLink
+                :to="{ name: 'project' }"
                 class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
-                >Projekt</a
+                >Projekt</RouterLink
               >
-              <a
-                href="#"
+              <RouterLink
+                :to="{ name: 'contact' }"
                 class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
-                >Kontakt</a
+                >Kontakt</RouterLink
               >
             </div>
 
@@ -106,20 +106,15 @@
 
             <div>
               <h3 class="text-gray-700 uppercase dark:text-white">Komunita</h3>
-              <a
-                href="/about"
+              <RouterLink
+                to="/"
                 class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
-                >O nás</a
+                >Kariéra</RouterLink
               >
-              <a
-                href="#"
+              <RouterLink
+                :to="{ name: 'faq' }"
                 class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
-                >Kariéra</a
-              >
-              <a
-                href="/faq"
-                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
-                >FAQ</a
+                >FAQ</RouterLink
               >
             </div>
 
@@ -155,7 +150,10 @@
           <span> © Copyright {{ date }} - Všechna práva vyhrazena </span>
           <span
             >Vytvořeno
-            <RouterLink class="text-gray-600 hover:underline" :to="{ name: 'project' }">L&M</RouterLink
+            <RouterLink
+              class="text-gray-600 hover:underline"
+              :to="{ name: 'project' }"
+              >L&M</RouterLink
             ></span
           >
         </div>
@@ -165,8 +163,8 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
-const date = new Date().getFullYear()
+import { RouterLink } from "vue-router";
+const date = new Date().getFullYear();
 </script>
 
 <style scoped>

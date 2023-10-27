@@ -1,5 +1,5 @@
 <template>
-  <div x-data="{ isOpen: true }" class="relative inline-block">
+  <div x-data="{ isOpen: false }" class="relative inline-block">
     <!-- Dropdown toggle button -->
     <button
       x-on:click="isOpen = !isOpen"

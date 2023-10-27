@@ -91,7 +91,7 @@
       </RouterLink>
       <a
         @click="$emit('signOut')"
-        class="flex items-center p-3 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+        class="flex items-center p-3 text-sm cursor-pointer text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
       >
         <svg
           class="w-5 h-5 mx-1"

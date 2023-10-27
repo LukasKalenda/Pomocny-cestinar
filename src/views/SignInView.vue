@@ -139,7 +139,6 @@ const register = () => {
     })
     .catch((error) => {
       console.log("Error signing in!", error);
-      alert(error);
       switch (error.code) {
         case "auth/invalid-email":
           errMsg.value = "Invalid email address!";

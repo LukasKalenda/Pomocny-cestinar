@@ -12,7 +12,7 @@
                 <img
                   class="w-auto h-6 sm:h-7"
                   src="@/assets/img/main_logo.png"
-                  alt=""
+                  alt="CZNETWORK Logo"
                 />
                 <span class="dark:text-gray-200 ml-1 text-xl">CZNETWORK</span>
               </div>
@@ -159,11 +159,6 @@ onMounted(() => {
     localStorage.theme = "light";
   });
 });
-
-const isOpen = ref(false);
-const toggle = () => {
-  isOpen.value = !isOpen.value;
-};
 
 const isLogged = ref(false);
 let auth;
