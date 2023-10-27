@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bg-c_gray shadow p-6 rounded-xl my-4">
-      <RouterLink to="/">
+      <RouterLink :to="{ name: 'article'}">
         <div>
           <h3>titulek</h3>
         </div>

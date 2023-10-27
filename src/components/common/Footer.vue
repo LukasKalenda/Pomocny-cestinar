@@ -155,8 +155,7 @@
           <span> © Copyright {{ date }} - Všechna práva vyhrazena </span>
           <span
             >Vytvořeno
-            <RouterLink class="text-gray-600 hover:underline" to="/nas-tym"
-              >L&M</RouterLink
+            <RouterLink class="text-gray-600 hover:underline" :to="{ name: 'project' }">L&M</RouterLink
             ></span
           >
         </div>

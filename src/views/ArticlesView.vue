@@ -57,21 +57,25 @@ onMounted(async () => {
 
     <section class="bg-primary_white shadow dark:bg-secondary">
       <div class="container px-6 py-16 mx-auto">
-        <div class="justify-center lg:flex">
-          <article class="w-2/3 sm:w-full">
-            <h2 class="text-gray-800 dark:text-white lg:text-4xl pb-4">
+        <div class="justify-between lg:flex">
+          <article class="md:w-2/3 sm:w-full md:mx-4">
+            <h2 class="text-gray-800 dark:text-white text-2xl lg:text-4xl pb-4">
               Všechny články
             </h2>
-            <div>
-              <ArticleShow />
-            </div>
+            <ul>
+              <li><ArticleShow /></li>
+            </ul>
           </article>
 
-          <aside class="w-1/3 sm:w-full">
-            <h2 class="text-gray-800 dark:text-white lg:text-4xl pb-4">
+          <aside class="md:w-1/3 sm:w-full md:mx-4">
+            <h2 class="text-gray-800 dark:text-white text-2xl lg:text-4xl pb-4">
               Jednotlivá témata
             </h2>
-            jednot
+            <ul>
+              <li>tady</li>
+              <li>pojede</li>
+              <li>autiucko</li>
+            </ul>
           </aside>
         </div>
       </div>
