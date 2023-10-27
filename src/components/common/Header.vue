@@ -150,7 +150,7 @@ onMounted(() => {
     document.documentElement.classList.remove("dark");
     localStorage.theme = "light";
   });
-})
+});
 
 const isOpen = ref(false);
 const toggle = () => {
@@ -176,4 +176,8 @@ const handleSignOut = () => {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.router-link-active {
+  color: rgb(130, 143, 216);
+}
+</style>
