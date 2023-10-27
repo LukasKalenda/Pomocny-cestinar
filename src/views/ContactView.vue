@@ -1,6 +1,6 @@
 <template>
   <section
-    class="min-h-screen bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900"
+    class="min-h-screen bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900"
   >
     <div class="container flex flex-col min-h-screen px-6 py-12 mx-auto">
       <div class="flex-1 lg:flex lg:items-center lg:-mx-6">

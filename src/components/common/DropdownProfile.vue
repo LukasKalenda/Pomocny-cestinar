@@ -112,12 +112,8 @@
 </template>
 
 <script setup>
-import Alpine from "alpinejs";
 import { RouterLink } from "vue-router";
 
-window.Alpine = Alpine;
-
-Alpine.start();
 </script>
 
 <style lang="scss" scoped></style>

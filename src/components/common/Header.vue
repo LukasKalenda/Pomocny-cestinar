@@ -75,11 +75,7 @@
             <div
               class="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8"
             >
-              <RouterLink
-                to="/kurzy"
-                class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                >Kurzy</RouterLink
-              >
+              <Dropdown />
               <RouterLink
                 :to="{ name: 'articles' }"
                 class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -123,6 +119,12 @@
 </template>
 
 <script setup>
+import Alpine from "alpinejs";
+
+window.Alpine = Alpine;
+
+Alpine.start();
+
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import router from "../../router";
 
@@ -130,6 +132,7 @@ import { ref, onMounted } from "vue";
 import { RouterLink } from "vue-router";
 
 import MsgNoti from "./MsgNoti.vue";
+import Dropdown from "./Dropdown.vue";
 import DropdownProfile from "./DropdownProfile.vue";
 
 //themeMode
