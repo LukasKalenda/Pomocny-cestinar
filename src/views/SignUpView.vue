@@ -9,26 +9,11 @@
           <div class="flex justify-center mx-auto">
             <img
               class="w-auto h-7 sm:h-8"
-              src="https://merakiui.com/images/logo.svg"
+              src="../assets/img/main_logo.png"
               alt=""
             />
           </div>
 
-          <div class="flex items-center justify-center mt-6">
-            <a
-              href="#"
-              class="w-1/3 pb-4 font-medium text-center text-gray-500 capitalize border-b dark:border-gray-400 dark:text-gray-300"
-            >
-              sign in
-            </a>
-
-            <a
-              href="#"
-              class="w-1/3 pb-4 font-medium text-center text-gray-800 capitalize border-b-2 border-blue-500 dark:border-blue-400 dark:text-white"
-            >
-              sign up
-            </a>
-          </div>
           <a
             href="#"
             class="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
@@ -56,7 +41,7 @@
             </div>
 
             <span class="w-5/6 px-4 py-3 font-bold text-center"
-              >Google Registrace</span
+              >Registrace přes Google</span
             >
           </a>
           <div class="relative flex items-center mt-8">
@@ -80,7 +65,8 @@
             <input
               type="text"
               class="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-              placeholder="Username"
+              placeholder="Přezdívka"
+              required
             />
           </div>
 
@@ -129,7 +115,7 @@
             <input
               type="email"
               class="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-              placeholder="Email address"
+              placeholder="E-mail adresa"
               required
               v-model="email"
             />
@@ -156,7 +142,7 @@
             <input
               type="password"
               class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-              placeholder="Password"
+              placeholder="Heslo"
               required
               v-model="password"
             />
@@ -183,7 +169,8 @@
             <input
               type="password"
               class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-              placeholder="Confirm Password"
+              placeholder="Heslo znovu"
+              required
             />
           </div>
 
@@ -192,16 +179,16 @@
               class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
               @click="register"
             >
-              Sign Up
+              Registrovat!
             </button>
 
             <div class="mt-6 text-center">
-              <a
-                href="#"
+              <RouterLink
+                :to="{ name: 'signin' }"
                 class="text-sm text-blue-500 hover:underline dark:text-blue-400"
               >
-                Already have an account?
-              </a>
+                Již máš účet? Přihlásit se!
+              </RouterLink>
             </div>
           </div>
         </form>
@@ -218,7 +205,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { RouterLink } from "vue-router";
 import router from "../router";
 
 const email = ref("");
@@ -238,17 +225,17 @@ const register = () => {
     });
 };
 const signWithGoogle = () => {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(getAuth(), provider)
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(getAuth(), provider)
     .then((result) => {
-        // const credential = GoogleAuthProvider.credentialFromResult(result);
-        // const token = credential.accessToken;
-        // const user = result.user;
-        console.log(user);
-        router.push("/");
+      // const credential = GoogleAuthProvider.credentialFromResult(result);
+      // const token = credential.accessToken;
+      // const user = result.user;
+      console.log(user);
+      router.push("/");
     })
     .catch((error) => {
-        console.log(error);
+      console.log(error);
     });
 };
 </script>

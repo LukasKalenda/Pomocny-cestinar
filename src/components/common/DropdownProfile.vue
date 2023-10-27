@@ -46,9 +46,9 @@
 
       <hr class="border-gray-200 dark:border-gray-700" />
 
-      <a
-        href="#"
-        class="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+      <RouterLink
+        :to="{ name: 'profile' }"
+        class="flex items-center p-3 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
       >
         <svg
           class="w-5 h-5 mx-1"
@@ -66,14 +66,14 @@
           ></path>
         </svg>
 
-        <span class="mx-1"> view profile </span>
-      </a>
+        <span class="mx-1"> Zobrazit profil </span>
+      </RouterLink>
 
       <hr class="border-gray-200 dark:border-gray-700" />
 
-      <a
-        href="#"
-        class="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+      <RouterLink
+        :to="{ name: 'faq' }"
+        class="flex items-center p-3 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
       >
         <svg
           class="w-5 h-5 mx-1"
@@ -87,11 +87,11 @@
           ></path>
         </svg>
 
-        <span class="mx-1"> Help </span>
-      </a>
+        <span class="mx-1"> FAQ </span>
+      </RouterLink>
       <a
-        href="#"
-        class="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+        @click="$emit('signOut')"
+        class="flex items-center p-3 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
       >
         <svg
           class="w-5 h-5 mx-1"
@@ -105,7 +105,7 @@
           ></path>
         </svg>
 
-        <span class="mx-1"> Sign Out </span>
+        <span class="mx-1"> Odhlásit se! </span>
       </a>
     </div>
   </div>
@@ -113,6 +113,7 @@
 
 <script setup>
 import Alpine from "alpinejs";
+import { RouterLink } from "vue-router";
 
 window.Alpine = Alpine;
 
