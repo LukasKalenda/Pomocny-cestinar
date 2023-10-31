@@ -15,7 +15,24 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ```sh
 npm install
 ```
+### TailwindCSS
 
+```sh
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+### AlpineJS
+
+```sh
+npm install alpinejs
+```
+```sh
+import Alpine from "alpinejs";
+
+window.Alpine = Alpine;
+
+Alpine.start();
+```
 ### Compile and Hot-Reload for Development
 
 ```sh
