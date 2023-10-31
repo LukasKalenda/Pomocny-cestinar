@@ -108,8 +108,27 @@
                   alt="Sun Icon"
                 />
               </div>
-              <MsgNoti />
-              <DropdownProfile @signOut="handleSignOut" />
+              <div v-if="isLogged">
+                <MsgNoti />
+                <DropdownProfile @signOut="handleSignOut" />
+              </div>
+              <div v-if="!isLogged">
+                <RouterLink
+                  :to="{ name: 'signin' }"
+                  class="flex items-center focus:outline-none"
+                  aria-label="toggle profile dropdown"
+                >
+                  <div
+                    class="w-6 h-6 overflow-hidden border-2 border-gray-400 rounded-full"
+                  >
+                    <img
+                      src="@/assets/img/user.png"
+                      class="object-cover w-full h-full"
+                      alt="avatar"
+                    />
+                  </div>
+                </RouterLink>
+              </div>
             </div>
           </div>
         </div>
@@ -174,6 +193,7 @@ onMounted(() => {
 });
 const handleSignOut = () => {
   signOut(auth).then(() => {
+    console.log("Sign-out successful.");
     router.push("/");
   });
 };

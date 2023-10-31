@@ -1,8 +1,8 @@
 <template>
-    <section class="flex flex-col items-center">
+    <div class="flex flex-col items-center">
       <div class="lg:flex sm:items-center lg:w-3/4 bg-slate-300 dark:bg-blue-800 m-2 p-4 rounded-xl" v-for="c in content">
         <div class="w-full lg:w-1/2 lg:pr-3">
-          <img class="rounded-xl" :src="c.image" alt="" />
+          <img class="rounded-xl" :src="c.image" :alt=c.title />
         </div>
   
         <div class="w-full lg:w-1/2 mt-0 lg:px-7 pt-4 lg:pt-0 ">
@@ -17,7 +17,7 @@
           </button>
         </div>
       </div>
-    </section>
+    </div>
   </template>
   
   <script setup>

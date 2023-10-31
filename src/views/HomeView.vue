@@ -56,7 +56,7 @@
       >
         Kurzy
       </h2>
-      <div class="container mx-auto">
+      <div class="mx-auto">
         <CourseHomePage />
       </div>
     </section>
