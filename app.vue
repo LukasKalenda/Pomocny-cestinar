@@ -1,5 +1,9 @@
 <template>
   <div>
-    <NuxtWelcome />
+    <RouterView />
   </div>
 </template>
+
+<script setup>
+
+</script>
