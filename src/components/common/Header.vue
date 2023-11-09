@@ -2,7 +2,7 @@
   <header>
     <nav
       x-data="{ isOpen: false }"
-      class="relative bg-primary_white shadow dark:bg-primary_dark"
+      class="relative bg-white"
     >
       <div class="container px-6 py-4 mx-auto">
         <div class="lg:flex lg:items-center lg:justify-between">
@@ -12,9 +12,9 @@
                 <img
                   class="w-auto h-6 sm:h-7"
                   src="@/assets/img/main_logo.png"
-                  alt="CZNETWORK Logo"
+                  alt="Pomocny cestinar"
                 />
-                <span class="dark:text-gray-200 ml-1 text-xl">CZNETWORK</span>
+                <span class="text-black text-xl">Pomocný</span> <span class="text-pink text-xl ml-1"> češtinář</span>
               </div>
             </RouterLink>
 
@@ -79,12 +79,12 @@
               <RouterLink
                 :to="{ name: 'articles' }"
                 class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                >Články</RouterLink
+                >Vlastní rozbory</RouterLink
               >
               <RouterLink
                 :to="{ name: 'project' }"
                 class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                >Projekt</RouterLink
+                >Pro školy</RouterLink
               >
               <RouterLink
                 :to="{ name: 'contact' }"

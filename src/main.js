@@ -1,4 +1,5 @@
 import './assets/main.scss'
+import './assets/main.css'
 import './firebase/index.js' // Initialize Firebase, due to errors 
 
 import { createApp } from 'vue'

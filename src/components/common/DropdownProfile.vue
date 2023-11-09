@@ -89,7 +89,9 @@
 
         <span class="mx-1"> FAQ </span>
       </RouterLink>
+      <!-- V if signin -->
       <a
+        v-if="isLogged"
         @click="$emit('signOut')"
         class="flex items-center p-3 text-sm cursor-pointer text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
       >
@@ -113,7 +115,19 @@
 
 <script setup>
 import { RouterLink } from "vue-router";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
+const isLogged = ref(false);
+onMounted(() => {
+  auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      isLogged.value = true;
+    } else {
+      isLogged.value = false;
+    }
+  });
+});
 </script>
 
 <style lang="scss" scoped></style>
