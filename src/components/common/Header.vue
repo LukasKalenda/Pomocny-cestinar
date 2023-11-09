@@ -4,14 +4,14 @@
       x-data="{ isOpen: false }"
       class="relative bg-white"
     >
-      <div class="container px-6 py-4 mx-auto">
+      <div class="container py-4 mx-auto">
         <div class="lg:flex lg:items-center lg:justify-between">
           <div class="flex items-center justify-between">
             <RouterLink to="/">
               <div class="flex items-center">
                 <img
                   class="w-auto h-6 sm:h-7"
-                  src="@/assets/img/main_logo.png"
+                  src="@/assets/img/book_bulb.png"
                   alt="Pomocny cestinar"
                 />
                 <span class="text-black text-xl">Pomocný</span> <span class="text-pink text-xl ml-1"> češtinář</span>

@@ -39,7 +39,9 @@
       </section>
 
       <!-- kurzy -->
-      <section class="shadow container mx-auto">
+      <section class="shadow container mx-auto lg:flex justify-between gap-6">
+        <CardHomePage />
+        <CardHomePage />
         <CardHomePage />
       </section>
     </main>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Registration component -->
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white">
       <div
         class="container flex items-center justify-center min-h-screen px-6 mx-auto"
       >
@@ -9,14 +9,14 @@
           <div class="flex justify-center mx-auto">
             <img
               class="w-auto h-7 sm:h-8"
-              src="../assets/img/main_logo.png"
+              src="../assets/img/book_bulb.png"
               alt=""
             />
           </div>
 
           <a
             href="#"
-            class="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+            class="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg border-solid"
             @click="signWithGoogle"
           >
             <div class="px-4 py-2">
@@ -40,7 +40,7 @@
               </svg>
             </div>
 
-            <span class="w-5/6 px-4 py-3 font-bold text-center"
+            <span class="py-3 font-bold text-center"
               >Registrace přes Google</span
             >
           </a>

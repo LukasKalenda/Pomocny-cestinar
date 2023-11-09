@@ -1,18 +1,18 @@
 <template>
   <!-- Login component -->
-  <section class="bg-white dark:bg-gray-900">
+  <section class="bg-white">
     <div
       class="container flex items-center justify-center min-h-screen px-6 mx-auto"
     >
       <form class="w-full max-w-md">
         <img
           class="w-auto h-7 sm:h-8"
-          src="../assets/img/main_logo.png"
+          src="../assets/img/book_bulb.png"
           alt=""
         />
 
         <h1
-          class="mt-3 text-2xl font-semibold text-gray-800 capitalize sm:text-3xl dark:text-white"
+          class="mt-3 text-2xl font-semibold text-gray-800 capitalize sm:text-3xl"
         >
           Přihlaš se!
         </h1>
@@ -21,7 +21,7 @@
           <span class="absolute">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+              class="w-6 h-6 mx-3 text-gray-300"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -37,7 +37,7 @@
 
           <input
             type="email"
-            class="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+            class="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             placeholder="E-mail adresa"
             v-model="email"
           />
@@ -47,7 +47,7 @@
           <span class="absolute">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+              class="w-6 h-6 mx-3 text-gray-300"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -63,7 +63,7 @@
 
           <input
             type="password"
-            class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+            class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             placeholder="Heslo"
             v-model="password"
           />
@@ -77,13 +77,13 @@
             Přihlásit se!
           </button>
 
-          <p class="mt-4 text-center text-gray-600 dark:text-gray-400">
+          <p class="mt-4 text-center text-gray-600">
             nebo pomocí
           </p>
           <!-- Google login -->
           <a
             href="#"
-            class="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+            class="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg border-solid"
           >
             <svg class="w-6 h-6 mx-2" viewBox="0 0 40 40">
               <path
@@ -110,7 +110,7 @@
           <div class="mt-6 text-center">
             <RouterLink
               :to="{ name: 'signup' }"
-              class="text-sm text-blue-500 hover:underline dark:text-blue-400"
+              class="text-sm text-blue-500 hover:underlin"
             >
               Nemáš ještě účet? Registruj se!
             </RouterLink>
