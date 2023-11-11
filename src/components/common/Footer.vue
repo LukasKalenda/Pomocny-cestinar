@@ -9,7 +9,7 @@
             </a>
 
             <p class="max-w-sm mt-2 text-gray-500 dark:text-gray-400">
-              Připojte se ke skvělé komunitě, tvořící svět nejen IT.
+              Zapojte se také ke komunitě, která si pomáhá a sdílí literaturu.
             </p>
 
             <div class="flex mt-6 -mx-2">
