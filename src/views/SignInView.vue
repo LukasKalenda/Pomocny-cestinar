@@ -82,6 +82,7 @@
           </p>
           <!-- Google login -->
           <a
+          @click="signWithGoogle"
             href="#"
             class="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg border-solid"
           >
@@ -124,12 +125,33 @@
 <script setup>
 import { ref } from "vue";
 import { RouterLink, useRouter } from "vue-router";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import router from "../router";
 
 const errMsg = ref("");
 const email = ref("");
 const password = ref("");
+const provider = new GoogleAuthProvider();
+
+const handleSignInError = (error) => {
+  console.log("Error signing in!", error);
+  switch (error.code) {
+    case "auth/invalid-email":
+      errMsg.value = "Invalid email address!";
+      break;
+    case "auth/user-disabled":
+      errMsg.value = "User is disabled!";
+      break;
+    case "auth/user-not-found":
+      errMsg.value = "User not found!";
+      break;
+    case "auth/wrong-password":
+      errMsg.value = "Wrong password!";
+      break;
+    default:
+      errMsg.value = "Unknown error!";
+  }
+};
 
 const register = () => {
   signInWithEmailAndPassword(getAuth(), email.value, password.value)
@@ -138,26 +160,34 @@ const register = () => {
       router.push("/");
     })
     .catch((error) => {
-      console.log("Error signing in!", error);
-      switch (error.code) {
-        case "auth/invalid-email":
-          errMsg.value = "Invalid email address!";
-          break;
-        case "auth/user-disabled":
-          errMsg.value = "User is disabled!";
-          break;
-        case "auth/user-not-found":
-          errMsg.value = "User not found!";
-          break;
-        case "auth/wrong-password":
-          errMsg.value = "Wrong password!";
-          break;
-        default:
-          errMsg.value = "Unknown error!";
-      }
-    });
+      handleSignInError(error);
+    }
+  );
 };
-const signWithGoogle = () => {};
+const signWithGoogle = () => {
+  const auth = getAuth();
+  signInWithRedirect(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+  }).catch((error) => {
+    handleSignInError(error);
+    // // Handle Errors here.
+    // const errorCode = error.code;
+    // const errorMessage = error.message;
+    // // The email of the user's account used.
+    // const email = error.customData.email;
+    // // The AuthCredential type that was used.
+    // const credential = GoogleAuthProvider.credentialFromError(error);
+    // // ...
+  });
+
+};
 </script>
 
 <style scoped></style>
