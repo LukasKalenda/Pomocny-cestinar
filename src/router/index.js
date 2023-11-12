@@ -56,6 +56,11 @@ const router = createRouter({
       name: "project",
       component: () => import("../views/ProjectView.vue"),
     },
+    {
+      path: "/vytvorit-rozbor",
+      name: "addbook",
+      component: () => import("../views/AddBookView.vue"),
+    },
     // 404
     {
       path: "/:pathMatch(.*)*",

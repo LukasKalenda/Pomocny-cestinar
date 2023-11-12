@@ -70,14 +70,14 @@
                 ? 'translate-x-0 opacity-100'
                 : 'opacity-0 -translate-x-full',
             ]"
-            class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center"
+            class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-black dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center"
           >
             <div
               class="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8"
             >
               <Dropdown />
               <RouterLink
-                :to="{ name: 'articles' }"
+                :to="{ name: 'addbook' }"
                 class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >Vlastní rozbory</RouterLink
               >
@@ -95,19 +95,6 @@
 
             <!-- Mobile nav -->
             <div class="flex items-center justify-center mt-4 lg:mt-0">
-              <!-- <DarkModeSwitcher -->
-              <div class="flex">
-                <img
-                  class="dark:hidden moon cursor-pointer w-6 h-6 overflow-hidden border-1 border-gray-400 rounded-full"
-                  src="@/assets/img/moon.svg"
-                  alt="Moon Icon"
-                />
-                <img
-                  class="sun cursor-pointer w-6 h-6 overflow-hidden border-1 border-gray-400 rounded-full"
-                  src="@/assets/img/bulb.svg"
-                  alt="Sun Icon"
-                />
-              </div>
               <div v-if="isLogged">
                 <MsgNoti />
                 <DropdownProfile @signOut="handleSignOut" />
@@ -153,31 +140,6 @@ import { RouterLink } from "vue-router";
 import MsgNoti from "./MsgNoti.vue";
 import Dropdown from "./Dropdown.vue";
 import DropdownProfile from "./DropdownProfile.vue";
-
-//themeMode
-// On page load or when changing themes, best to add inline in `head` to avoid FOUC
-if (
-  localStorage.theme === "dark" ||
-  (!("theme" in localStorage) &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches)
-) {
-  document.documentElement.classList.add("dark");
-} else {
-  document.documentElement.classList.remove("dark");
-}
-
-onMounted(() => {
-  const moon = document.querySelector(".moon");
-  const sun = document.querySelector(".sun");
-  moon.addEventListener("click", () => {
-    document.documentElement.classList.add("dark");
-    localStorage.theme = "dark";
-  });
-  sun.addEventListener("click", () => {
-    document.documentElement.classList.remove("dark");
-    localStorage.theme = "light";
-  });
-});
 
 const isLogged = ref(false);
 let auth;
