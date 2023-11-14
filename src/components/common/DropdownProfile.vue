@@ -114,12 +114,13 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue";
 import { RouterLink } from "vue-router";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const isLogged = ref(false);
 onMounted(() => {
-  auth = getAuth();
+  const auth = getAuth();
   onAuthStateChanged(auth, (user) => {
     if (user) {
       isLogged.value = true;
