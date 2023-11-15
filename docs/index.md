@@ -3,7 +3,6 @@ layout: home
 
 hero:
   name: Pomocný češtinář
-  text: Rozbory děl a vše k maturitě
   image:
     src: /learning.svg
     alt: Learning woman
