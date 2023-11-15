@@ -19,13 +19,16 @@ hero:
 link: https://github.com/evavic44/adocs-template
 
 features:
-  - icon: ⚡️
+  - icon: 📚
     title: Rozbory děl
     details: Veškerá potřebná díla k maturitě se vším důležitým.
-  - icon: 🎉
+    link: /rozbory
+  - icon: 💬
     title: Literatura
     details: Od středověku až po moderní světovou literaturu.
-  - icon: 🔥
+    link: /literatura
+  - icon: ✏️
     title: Slohové práce
-    details: Texty a úvahy našich čtenářů.
+    details: Texty a úvahy našich čtenářů.¨
+    link: /slohovky
 ---

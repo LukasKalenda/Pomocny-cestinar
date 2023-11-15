@@ -2,8 +2,11 @@
 export default {
   title: "Pomocný češtinár",
   description: "Rozbory díla k maturitě a čeština pro střední školy",
-
   lang: "cs-CZ",
+  rewrites: {
+    "packages/:pkg/src/(.*)": ":pkg/index.md",
+  },
+
   themeConfig: {
     logo: "/logo.svg",
     siteTitle: "Pomocný češtinář",
