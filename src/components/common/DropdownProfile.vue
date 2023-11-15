@@ -36,10 +36,10 @@
       >
         <div class="mx-1">
           <h1 class="text-sm font-semibold text-gray-700 dark:text-gray-200">
-            Jane Doe
+            {{ userName }}
           </h1>
           <p class="text-sm text-gray-500 dark:text-gray-400">
-            janedoe@exampl.com
+            {{ userEmail }}
           </p>
         </div>
       </a>
@@ -119,11 +119,16 @@ import { RouterLink } from "vue-router";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const isLogged = ref(false);
+const userName = ref("Not logged in");
+const userEmail = ref("");
+
 onMounted(() => {
   const auth = getAuth();
   onAuthStateChanged(auth, (user) => {
     if (user) {
       isLogged.value = true;
+      userName.value = user.displayName;
+      userEmail.value = user.email;
     } else {
       isLogged.value = false;
     }
