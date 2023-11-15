@@ -21,13 +21,13 @@ features:
   - icon: 📚
     title: Rozbory děl
     details: Veškerá potřebná díla k maturitě se vším důležitým.
-    link: /rozbory
+    link: /rozbory/
   - icon: 💬
     title: Literatura
     details: Od středověku až po moderní světovou literaturu.
-    link: /literatura
+    link: /literatura/
   - icon: ✏️
     title: Slohové práce
-    details: Texty a úvahy našich čtenářů.¨
-    link: /slohovky
+    details: Texty a úvahy našich čtenářů.
+    link: /slohovky/
 ---

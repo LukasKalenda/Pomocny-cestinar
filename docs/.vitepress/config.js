@@ -1,6 +1,6 @@
 // .vitepress/config.js
 export default {
-  title: "Pomocný češtinár",
+  titleTemplate: ':title - Pomocný češtinář',
   description: "Rozbory díla k maturitě a čeština pro střední školy",
   lang: "cs-CZ",
   rewrites: {
@@ -15,7 +15,14 @@ export default {
       { text: "Projekt", link: "/projekt" },
       { text: "Pro školy", link: "/pro-skoly" },
       { text: "Vytvořit rozbor", link: "/vytvorit-rozbor" },
-      { text: "Změny", link: "https://github.com/Evavic44" },
+      {
+        text: 'Čeština',
+        items: [
+          { text: 'Rozbory', link: '/rozbory/' },
+          { text: 'Literatura', link: '/literatura/' },
+          { text: 'Slohovky', link: '/slohovky/' }
+        ]
+      }
     ],
     // Anonymous
     socialLinks: [
@@ -39,8 +46,8 @@ export default {
           text: "Světová a česká lit. 18. st.",
           collapsible: true,
           items: [
-            { text: "Důmyslný rytíř don Quijote", link: "/introduction" },
-            { text: "Lakomec", link: "/getting-started" },
+            { text: "Důmyslný rytíř don Quijote", link: "/rozbory/" },
+            { text: "Lakomec", link: "/rozbory/one" },
           ],
         },
         {
@@ -59,6 +66,17 @@ export default {
           items: [
             { text: "Stařec a moře", link: "/introduction" },
             { text: "Na západní frotně klid", link: "/getting-started" },
+          ],
+        },
+      ],
+      // is on `config` directory.
+      "/config/": [
+        {
+          text: "Config",
+          items: [
+            { text: "Index", link: "/config/" },
+            { text: "Three", link: "/config/three" },
+            { text: "Four", link: "/config/four" },
           ],
         },
       ],

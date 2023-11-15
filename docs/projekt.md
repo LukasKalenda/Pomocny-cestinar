@@ -1,19 +1,10 @@
 # Projekt
 
-Welcome to the about page.
+Víteje na našem projektu zabývající se češtinou.
 
-This markdown supports html elements like the `p` tag coupled with inline styles
+Jsme skupinka studentů, kteří se rozhodli, že připraví stránku, kde budou sepsány přehledně maturitní knihy.
 
-<p style="color: #ff7340; border: 1px solid rgba(255, 135, 23, 0.25); border-radius:5px; padding: 1rem;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-
-Even satire code snippets with syntax highlighting are also supported. 😅
-
-const lang = prompt("What is your favorite programming language?");
-
-(lang === "JavaScript") | (lang === "javascript") | (lang === "js")
-? alert("JavaScript to the world! 🚀🟡")
-: alert(`We don't permit such languages here 💩`);
-
-Of course, images are not left out.
-
-<img src="/logo.svg" alt="adocs logo">
+Hlavní výhodou tohoto portálu je, že každý může vytvářet své vlastní rozbory. Pomocí šablony. 
+::: info
+Pro vytváření se stačí jen registrovat.
+:::
