@@ -11,11 +11,6 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/clanky",
-      name: "articles",
-      component: () => import("../views/ArticlesView.vue"),
-    },
-    {
       path: "/clanky/1",
       name: "article",
       component: () => import("../views/OneArticleView.vue"),
@@ -24,11 +19,6 @@ const router = createRouter({
       path: "/kontakt",
       name: "contact",
       component: () => import("../views/ContactView.vue"),
-    },
-    {
-      path: "/kurzy",
-      name: "course",
-      component: () => import("../views/CourseView.vue"),
     },
     {
       path: "/faq",
@@ -60,6 +50,11 @@ const router = createRouter({
       path: "/vytvorit-rozbor",
       name: "addbook",
       component: () => import("../views/AddBookView.vue"),
+    },
+    {
+      path: "/literatura",
+      name: "literature",
+      component: () => import("../views/LiteratureView.vue"),
     },
     // 404
     {

@@ -40,9 +40,9 @@
 
       <!-- kurzy -->
       <section class="shadow container mx-auto lg:flex justify-between gap-6">
-        <CardHomePage />
-        <CardHomePage />
-        <CardHomePage />
+        <CardHomePage title="Autoři" description="lorem lorem" :link="{ name: 'literature' }" />
+        <CardHomePage title="Literatura" description="lorem lorem" :link="{ name: 'literature' }" />
+        <CardHomePage title="Slohové práce" description="lorem lorem" :link="{ name: 'literature' }"/>
       </section>
     </main>
   </div>
