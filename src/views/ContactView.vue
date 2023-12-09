@@ -1,11 +1,11 @@
 <template>
   <section
-    class="min-h-screen bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900"
+    class="min-h-screen bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600"
   >
     <div class="container flex flex-col min-h-screen px-6 py-12 mx-auto">
       <div class="flex-1 lg:flex lg:items-center lg:-mx-6">
         <div class="text-white lg:w-1/2 lg:mx-6">
-          <h1 class="text-2xl font-semibold capitalize lg:text-3xl">
+          <h1 class="text-2xl font-semibold capitalize lg:text-3xl text-white">
             Napište nám
           </h1>
 
@@ -30,8 +30,8 @@
                 />
               </svg>
               <!-- Mailová adresa -->
-              <span class="mx-2 text-white truncate w-72"
-                >info@cznetwork.cz</span
+              <span class="mx-2 text-white truncate font-medium"
+                >info@pomocnycestinar.cz</span
               >
             </p>
           </div>
@@ -71,9 +71,9 @@
 
         <div class="mt-8 lg:w-1/2 lg:mx-6">
           <div
-            class="w-full px-8 py-10 mx-auto overflow-hidden bg-white shadow-2xl rounded-xl dark:bg-gray-900 lg:max-w-xl"
+            class="w-full px-8 py-10 mx-auto overflow-hidden bg-white shadow-2xl rounded-xl lg:max-w-xl"
           >
-            <h1 class="text-xl font-medium text-gray-700 dark:text-gray-200">
+            <h1 class="text-xl font-medium text-gray-700">
               Kontaktní formulář
             </h1>
 
@@ -87,14 +87,14 @@
               <div class="flex-1">
                 <label
                   for="name"
-                  class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                  class="block mb-2 text-sm text-gray-600"
                   >Vaše jméno</label
                 >
                 <input
                   id="name"
                   type="text"
                   placeholder="František Kovář"
-                  class="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                  class="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                   name="name"
                   required
                 />
@@ -104,14 +104,14 @@
               <div class="flex-1 mt-6">
                 <label
                   for="inputEmail"
-                  class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                  class="block mb-2 text-sm text-gray-600"
                   >E-mail adresa</label
                 >
                 <input
                   id="inputEmail"
                   type="email"
                   placeholder="franta.kovar@email.cz"
-                  class="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                  class="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                   name="email"
                   required
                 />
@@ -120,12 +120,12 @@
               <div class="w-full mt-6">
                 <label
                   for="message"
-                  class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                  class="block mb-2 text-sm text-gray-600"
                   >Zpráva pro nás</label
                 >
                 <textarea
                   id="message"
-                  class="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                  class="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                   placeholder="Právě jsem se připojil k ost..."
                   name="message"
                   required

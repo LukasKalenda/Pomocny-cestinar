@@ -1,20 +1,20 @@
 <template>
   <div>
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white">
       <div
         class="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center"
       >
         <div class="w-full lg:w-1/2">
           <div class="lg:max-w-lg">
             <h1
-              class="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl"
+              class="text-3xl font-semibold tracking-wide text-gray-800 lg:text-4xl"
             >
-              Líbí se Vám naše práce?
+              Jste škola a máte zájem o spolupráci?
             </h1>
 
             <div class="mt-8 space-y-5">
               <p
-                class="flex items-center -mx-2 text-gray-700 dark:text-gray-200"
+                class="flex items-center -mx-2 text-gray-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -31,11 +31,11 @@
                   />
                 </svg>
 
-                <span class="mx-2">Jednoduchý a moderní design</span>
+                <span class="mx-2">Přehledné informace</span>
               </p>
 
               <p
-                class="flex items-center -mx-2 text-gray-700 dark:text-gray-200"
+                class="flex items-center -mx-2 text-gray-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -52,11 +52,11 @@
                   />
                 </svg>
 
-                <span class="mx-2">Kvalitní obsah</span>
+                <span class="mx-2">Aktivita studentů</span>
               </p>
 
               <p
-                class="flex items-center -mx-2 text-gray-700 dark:text-gray-200"
+                class="flex items-center -mx-2 text-gray-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@
                   />
                 </svg>
 
-                <span class="mx-2">Super komunita</span>
+                <span class="mx-2">Získávání motivace</span>
               </p>
             </div>
           </div>
@@ -96,18 +96,17 @@
         </div>
       </div>
     </section>
-
     <!-- Working team -->
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white">
       <div class="container px-6 py-10 mx-auto">
         <h2
-          class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-blue-500"
+          class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl"
         >
           Náš tvůrčí tým
         </h2>
 
         <p
-          class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300"
+          class="max-w-2xl mx-auto my-6 text-center text-gray-500"
         >
           Náš pracovní tým se pomalu začíná rozšiřovat o další členy, kteří se
           podílejí na vývoji projektu.
@@ -117,7 +116,7 @@
           class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-2"
         >
           <div v-for="m in team" :key="m.name"
-            class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 border-gray-100 dark:border-gray-700 dark:hover:border-transparent"
+            class="px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group bg-blue-100 hover:bg-blue-300 border-gray-100"
           >
             <div class="flex flex-col sm:-mx-4 sm:flex-row">
               <img
@@ -128,13 +127,13 @@
 
               <div class="mt-4 sm:mx-4 sm:mt-0">
                 <h1
-                  class="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-white"
+                  class="text-xl font-semibold text-gray-700 capitalize md:text-2xl group-hover:text-white"
                 >
                   {{ m.name }}
                 </h1>
 
                 <p
-                  class="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300"
+                  class="mt-2 text-gray-500 capitalize group-hover:text-gray-300"
                 >
                   {{ m.role }}
                 </p>
@@ -142,7 +141,7 @@
             </div>
 
             <p
-              class="mt-4 text-gray-500 dark:text-gray-300 group-hover:text-gray-300"
+              class="mt-4 text-gray-500  group-hover:text-gray-300"
             >
               {{ m.description }}
             </p>
@@ -150,7 +149,7 @@
             <div class="flex mt-4 -mx-2">
               <a
                 href="#"
-                class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                class="mx-2 text-gray-600 hover:text-gray-500 group-hover:text-white"
                 aria-label="Reddit"
               >
                 <svg
@@ -167,7 +166,7 @@
 
               <a
                 href="#"
-                class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                class="mx-2 text-gray-600 hover:text-gray-500 group-hover:text-white"
                 aria-label="Facebook"
               >
                 <svg
@@ -184,7 +183,7 @@
 
               <a
                 :href="m.git"
-                class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                class="mx-2 text-gray-600 hover:text-gray-500 group-hover:text-white"
                 aria-label="Github"
               >
                 <svg
@@ -211,25 +210,18 @@ import Button from "@/components/common/Button.vue"
 
 const team = [{
   name: 'Lukáš Kalenda',
-  role: 'Zakladatel projektu',
+  role: 'Frontend vývoj & obsah',
   description: 'Na tomto projeku se zaměruji převážně na kordinacii obsahu a navázání kontaktů s naší skvělou komunitou.',
   image: '/src/assets/img/team/undraw_male_avatar.svg',
   git: "#"
 },
 {
-  name: "Michal Stonjek",
-  role: "Vývojář",
+  name: "Šimon Přerovský",
+  role: "Backend vývoj",
   description: "Zabývám se vývojem a správou hlavně backend části našich stránek.",
   image: '/src/assets/img/team/undraw_male_avatar.svg',
   git: "#"
 },
-{
-  name: "Adéla Krupková",
-  role : "Tvůrce obsahu",
-  description: "K projektu přispívám různým druhem článků. Vedu a kontroluji obsah na stránkách.",
-  image: '/src/assets/img/team/undraw_female_avatar_efig.svg',
-  git: "#"
-}
 ]
 </script>
 
