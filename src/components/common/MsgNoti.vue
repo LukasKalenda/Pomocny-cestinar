@@ -3,7 +3,7 @@
     <!-- Dropdown toggle button -->
     <button
       x-on:click="isOpen = !isOpen"
-      class="hidden mx-4 text-gray-600 transition-colors duration-300 transform lg:block dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-400 focus:text-gray-700 dark:focus:text-gray-400 focus:outline-none"
+      class="hidden mx-4 text-gray-600 transition-colors duration-300 transform lg:block hover:text-gray-700 focus:text-gray-700 focus:outline-none"
       aria-label="show notifications"
     >
       <svg
@@ -32,12 +32,12 @@
       x-transition:leave="transition ease-in duration-100"
       x-transition:leave-start="opacity-100 scale-100"
       x-transition:leave-end="opacity-0 scale-90"
-      class="absolute right-0 z-20 w-64 mt-2 overflow-hidden origin-top-right bg-white rounded-md shadow-lg sm:w-80 dark:bg-gray-800"
+      class="absolute right-0 z-20 w-64 mt-2 overflow-hidden origin-top-right bg-white rounded-md shadow-lg sm:w-80"
     >
       <div class="py-2">
         <a
           href="#"
-          class="flex items-center px-4 py-3 -mx-2 transition-colors duration-300 transform border-b border-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-700"
+          class="flex items-center px-4 py-3 -mx-2 transition-colors duration-300 transform border-b border-gray-100 hover:bg-gray-50"
         >
           <img
             class="flex-shrink-0 object-cover w-8 h-8 mx-1 rounded-full"
@@ -51,14 +51,14 @@
         </a>
         <a
           href="#"
-          class="flex items-center px-4 py-3 -mx-2 transition-colors duration-300 transform border-b border-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-700"
+          class="flex items-center px-4 py-3 -mx-2 transition-colors duration-300 transform border-b border-gray-100 hover:bg-gray-50"
         >
           <img
             class="flex-shrink-0 object-cover w-8 h-8 mx-1 rounded-full"
             src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
             alt="avatar"
           />
-          <p class="mx-2 text-sm text-gray-600 dark:text-white">
+          <p class="mx-2 text-sm text-gray-600">
             <span class="font-bold" href="#">Jane Doe</span> Like Your reply on
             <span class="text-blue-500 hover:underline" href="#"
               >Test with TDD</span
@@ -68,14 +68,14 @@
         </a>
         <a
           href="#"
-          class="flex items-center px-4 py-3 -mx-2 transition-colors duration-300 transform hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="flex items-center px-4 py-3 -mx-2 transition-colors duration-300 transform hover:bg-gray-100"
         >
           <img
             class="flex-shrink-0 object-cover w-8 h-8 mx-1 rounded-full"
             src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=398&q=80"
             alt="avatar"
           />
-          <p class="mx-2 text-sm text-gray-600 dark:text-white">
+          <p class="mx-2 text-sm text-gray-600">
             <span class="font-bold" href="#">Abigail Bennett</span> start
             following you . 3h
           </p>
@@ -83,7 +83,7 @@
       </div>
       <a
         href="#"
-        class="block py-2 font-bold text-center text-white bg-gray-800 dark:bg-gray-700 hover:underline"
+        class="block py-2 font-bold text-center text-white bg-gray-800 hover:underline"
         >Zobrazit všechny notifikace</a
       >
     </div>

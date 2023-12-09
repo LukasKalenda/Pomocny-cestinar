@@ -28,27 +28,27 @@
       x-transition:leave="transition ease-in duration-100"
       x-transition:leave-start="opacity-100 scale-100"
       x-transition:leave-end="opacity-0 scale-90"
-      class="absolute right-0 z-20 w-56 py-2 mt-2 overflow-hidden origin-top-right bg-white rounded-md shadow-xl dark:bg-gray-800"
+      class="absolute right-0 z-20 w-56 py-2 mt-2 overflow-hidden origin-top-right bg-white rounded-md shadow-xl"
     >
       <a
         href="#"
-        class="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+        class="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform hover:bg-gray-100"
       >
         <div class="mx-1">
-          <h1 class="text-sm font-semibold text-gray-700 dark:text-gray-200">
+          <h1 class="text-sm font-semibold text-gray-700">
             Jane Doe
           </h1>
-          <p class="text-sm text-gray-500 dark:text-gray-400">
+          <p class="text-sm text-gray-500">
             janedoe@exampl.com
           </p>
         </div>
       </a>
 
-      <hr class="border-gray-200 dark:border-gray-700" />
+      <hr class="border-gray-200" />
 
       <RouterLink
         :to="{ name: 'profile' }"
-        class="flex items-center p-3 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+        class="flex items-center p-3 text-sm text-gray-600 transition-colors duration-300 transform hover:bg-gray-100"
       >
         <svg
           class="w-5 h-5 mx-1"
@@ -73,7 +73,7 @@
 
       <RouterLink
         :to="{ name: 'faq' }"
-        class="flex items-center p-3 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+        class="flex items-center p-3 text-sm text-gray-600 transition-colors duration-300 transform hover:bg-gray-100"
       >
         <svg
           class="w-5 h-5 mx-1"
@@ -93,7 +93,7 @@
       <a
         v-if="isLogged"
         @click="$emit('signOut')"
-        class="flex items-center p-3 text-sm cursor-pointer text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+        class="flex items-center p-3 text-sm cursor-pointer text-gray-600 transition-colors duration-300 transform hover:bg-gray-100"
       >
         <svg
           class="w-5 h-5 mx-1"

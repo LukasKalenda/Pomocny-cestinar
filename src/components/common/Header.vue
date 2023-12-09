@@ -24,7 +24,7 @@
                 x-cloak
                 x-on:click="isOpen = !isOpen"
                 type="button"
-                class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
                 aria-label="toggle menu"
               >
                 <svg
@@ -70,7 +70,7 @@
                 ? 'translate-x-0 opacity-100'
                 : 'opacity-0 -translate-x-full',
             ]"
-            class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-black dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center"
+            class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-black lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center"
           >
             <div
               class="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8"
@@ -78,17 +78,17 @@
               <Dropdown />
               <RouterLink
                 :to="{ name: 'addbook' }"
-                class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 hover:bg-gray-100"
                 >Vlastní rozbory</RouterLink
               >
               <RouterLink
                 :to="{ name: 'project' }"
-                class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 hover:bg-gray-100"
                 >Pro školy</RouterLink
               >
               <RouterLink
-                :to="{ name: 'contact' }"
-                class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                :to="{ name: 'project' }"
+                class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 hover:bg-gray-100"
                 >Kontakt</RouterLink
               >
             </div>
@@ -137,7 +137,6 @@ import router from "../../router";
 import { ref, onMounted } from "vue";
 import { RouterLink } from "vue-router";
 
-import MsgNoti from "./MsgNoti.vue";
 import Dropdown from "./Dropdown.vue";
 import DropdownProfile from "./DropdownProfile.vue";
 
